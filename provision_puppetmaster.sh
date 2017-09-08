@@ -9,6 +9,7 @@ curl -O https://apt.puppetlabs.com/puppetlabs-release-pc1-xenial.deb
 dpkg -i puppetlabs-release-pc1-xenial.deb
 apt-get update
 apt-get install -y puppetserver
+apt-get install -y unzip
 
 echo '*.puppetdebug.vlan' > /etc/puppetlabs/puppet/autosign.conf
 # default puppet server memory is bigger than what we're giving the vm so decrease it
