@@ -3,7 +3,7 @@
 wget https://apt.puppetlabs.com/puppetlabs-release-pc1-xenial.deb
 dpkg -i puppetlabs-release-pc1-xenial.deb
 apt-get update
-apt-get install -y puppet-agent unzip
+apt-get install -y puppet-agent unzip python
 echo "server=puppetmaster.puppetdebug.vlan" > /etc/puppetlabs/puppet/puppet.conf
 
 mkdir -p /etc/facter/facts.d
