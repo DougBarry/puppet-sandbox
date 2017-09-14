@@ -125,7 +125,7 @@ Vagrant.configure('2') do |config|
 
   config.trigger.before :ssh do
 
-    run_remote "echo sandbox_ip=$(ifconfig | grep -Po 'inet (10.20.[0-9.]+)' | sed 's/inet //') > /etc/facter/facts.d/sandbox_ip.txt"
+    run_remote "echo sandbox_ip=$(ifconfig | grep -Po 'inet (addr:)?(10.20.[0-9.]+)' | sed -r 's/inet (addr:)?//') > /etc/facter/facts.d/sandbox_ip.txt"
 
     if ["puppetagent_ubuntu", "puppetagent_centos"].include? ARGV[1]
 
